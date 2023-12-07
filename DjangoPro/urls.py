@@ -18,4 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from pro import views
 
-urlpatterns = [path("admin/", admin.site.urls), path("", views.index, name="index")]
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", views.index, name="index"),
+    path("create/", views.create, name="create"),
+    path("read/", views.read, name="read"),
+]
