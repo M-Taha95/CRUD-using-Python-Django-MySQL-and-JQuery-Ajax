@@ -32,3 +32,9 @@ def update(request, id):
     member.last_name = request.POST["last_name"]
     member.save()
     return redirect("/")
+
+
+def delete(request, id):
+    member = Member.objects.get(id=id)
+    member.delete()
+    return redirect("/")

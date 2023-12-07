@@ -58,6 +58,21 @@ $("#update").on("click", function () {
   }
 });
 
+$(document).on("click", ".delete", function () {
+  $id = $(this).attr("name");
+  $.ajax({
+    url: "delete/" + $id,
+    type: "POST",
+    data: {
+      csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
+    },
+    success: function () {
+      Read();
+      alert("Deleted!");
+    },
+  });
+});
+
 function Read() {
   $.ajax({
     url: "read/",

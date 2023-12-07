@@ -25,4 +25,5 @@ urlpatterns = [
     path("read/", views.read, name="read"),
     path("edit/<id>", views.edit, name="edit"),
     path("edit/update/<id>", views.update, name="update"),
+    path("delete/<id>", views.delete, name="delete"),
 ]
