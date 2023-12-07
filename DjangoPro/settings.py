@@ -81,7 +81,7 @@ DATABASES = {
         "NAME": "prodata",
         "HOST": "localhost",
         "USER": "root",
-        "PASSWORD": "2101995Taha",
+        "PASSWORD": "yourpassword",
     }
 }
 
