@@ -29,6 +29,35 @@ $(document).ready(function () {
   });
 });
 
+$(document).on("click", ".edit", function () {
+  $id = $(this).attr("name");
+  window.location = "edit/" + $id;
+});
+
+$("#update").on("click", function () {
+  $first_name = $("#first_name").val();
+  $last_name = $("#last_name").val();
+
+  if ($first_name == "" || $last_name == "") {
+    alert("Please complete the requirment filed");
+  } else {
+    $id = $("#member_id").val();
+    $.ajax({
+      url: "update/" + $id,
+      type: "POST",
+      data: {
+        first_name: $first_name,
+        last_name: $last_name,
+        csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
+      },
+      success: function () {
+        window.location = "/";
+        alert("Updated!");
+      },
+    });
+  }
+});
+
 function Read() {
   $.ajax({
     url: "read/",
